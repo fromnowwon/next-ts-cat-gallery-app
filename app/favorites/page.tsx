@@ -28,8 +28,8 @@ export default function FavoritePage() {
         className="flex gap-4"
         columnClassName="masonry-grid_column"
       >
-        {favoriteCats.map((cat) => (
-          <CatCard key={cat.id} cat={cat} />
+        {favoriteCats.map((cat, index) => (
+          <CatCard key={cat.id} cat={cat} index={index} />
         ))}
       </Masonry>
     </section>

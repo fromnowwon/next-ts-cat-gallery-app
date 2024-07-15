@@ -40,7 +40,7 @@ export default function Gallery() {
         columnClassName="masonry-grid_column"
       >
         {cats.map((cat, index: number) => (
-          <CatCard key={`${cat.id}-${index}`} cat={cat} />
+          <CatCard key={`${cat.id}-${index}`} cat={cat} index={index} />
         ))}
       </Masonry>
       <div className="flex justify-center py-6">
