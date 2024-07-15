@@ -32,7 +32,7 @@ export default function CatCard({ cat, index }: CatCardProps) {
         ease: "easeInOut",
         duration: 0.2,
       }}
-      className="rounded relative w-full"
+      className="rounded relative w-full mb-2"
     >
       <Image
         src={`${cat.url}`}
@@ -41,8 +41,12 @@ export default function CatCard({ cat, index }: CatCardProps) {
         height={400}
         className="w-full"
       />
-      <button onClick={() => toggleFavorite(cat)}>
-        {isFavorite ? <BsHeartFill /> : <BsHeart />}
+      <button onClick={() => toggleFavorite(cat)} className="mt-1 p-1 text-xl">
+        {isFavorite ? (
+          <BsHeartFill className="text-secondary" />
+        ) : (
+          <BsHeart className="text-secondary" />
+        )}
       </button>
     </MotionDiv>
   );
