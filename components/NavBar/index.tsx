@@ -6,7 +6,7 @@ const navMenuData = [
   {
     id: 1,
     title: "즐겨찾기",
-    address: "/favorite",
+    address: "/favorites",
   },
 ];
 
