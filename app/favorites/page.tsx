@@ -2,6 +2,7 @@
 
 import CatCard from "@/components/common/CatCard";
 import { useCatStore } from "@/store/catStore";
+import Masonry from "react-masonry-css";
 
 export default function FavoritePage() {
   const { favoriteCats, toggleFavorite } = useCatStore();
@@ -15,10 +16,22 @@ export default function FavoritePage() {
   }
 
   return (
-    <section className="container mx-auto py-6 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-      {favoriteCats.map((cat) => (
-        <CatCard key={cat.id} cat={cat} />
-      ))}
+    <section className="container mx-auto py-6">
+      <Masonry
+        breakpointCols={{
+          default: 4,
+          1100: 3,
+          900: 3,
+          750: 2,
+          350: 1,
+        }}
+        className="flex gap-4"
+        columnClassName="masonry-grid_column"
+      >
+        {favoriteCats.map((cat) => (
+          <CatCard key={cat.id} cat={cat} />
+        ))}
+      </Masonry>
     </section>
   );
 }
