@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body className={montserrat.className}>
-        <ThemeProvider>
+        <ThemeProvider attribute="class">
           <NavBar />
           {children}
         </ThemeProvider>

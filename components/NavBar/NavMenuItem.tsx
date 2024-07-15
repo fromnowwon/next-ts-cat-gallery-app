@@ -9,7 +9,7 @@ export default function NavMenuItem({ title, address }: NavMenuItemProps) {
   return (
     <Link
       href={address}
-      className="py-1 min-w-[60px] font-bold hover:text-primary transition-colors"
+      className="py-1 min-w-[60px] text-secondary font-bold hover:text-primary transition-colors"
     >
       {title}
     </Link>

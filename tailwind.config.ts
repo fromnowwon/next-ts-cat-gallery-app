@@ -14,13 +14,17 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      primary: {
-        DEFAULT: "#FF6A13",
-        dark: "#C75B0A",
-      },
-    },
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#FFC524",
+          dark: "#D6C500",
+        },
+        secondary: {
+          DEFAULT: "#1A3E8C",
+          dark: "#1D4ED8",
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

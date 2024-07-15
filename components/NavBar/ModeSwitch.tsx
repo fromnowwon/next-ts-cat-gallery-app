@@ -15,12 +15,12 @@ export default function ModeSwitch() {
       {currentTheme === "dark" ? (
         <MdDarkMode
           onClick={() => toggleMode("light")}
-          className="text-xl cursor-pointer hover:text-primary-dark"
+          className="text-white text-xl cursor-pointer hover:text-primary"
         />
       ) : (
         <MdLightMode
           onClick={() => toggleMode("dark")}
-          className="text-xl cursor-pointer hover:text-primary"
+          className="text-white text-xl cursor-pointer hover:text-primary"
         />
       )}
     </>
