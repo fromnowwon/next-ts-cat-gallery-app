@@ -6,16 +6,16 @@ import { useCatStore } from "@/store/catStore";
 export default function FavoritePage() {
   const { favoriteCats, toggleFavorite } = useCatStore();
 
-  if (!favoriteCats || favoriteCats.length === 0) {
+  if (favoriteCats && favoriteCats.length === 0) {
     return (
-      <div className="flex justify-center">
+      <section className="flex justify-center container mx-auto py-6">
         <p>즐겨찾기한 고양이가 없습니다.</p>
-      </div>
+      </section>
     );
   }
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    <section className="container mx-auto py-6 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
       {favoriteCats.map((cat) => (
         <CatCard key={cat.id} cat={cat} />
       ))}
