@@ -11,9 +11,19 @@ export default function CatCard({ cat }: CatCardProps) {
   const { favoriteCats, toggleFavorite } = useCatStore();
   const isFavorite = favoriteCats.some((fav) => fav.id === cat.id);
 
+  const imageUrl = cat.url || "";
+
+  if (!imageUrl) return null;
+
   return (
-    <div>
-      <Image src={`${cat.url}`} alt={cat.id} width={300} height={400} />
+    <div className="border rounded-sm overflow-hidden shadow-sm">
+      <Image
+        src={`${cat.url}`}
+        alt={cat.id}
+        width={300}
+        height={400}
+        className="w-full"
+      />
       <button onClick={() => toggleFavorite(cat)}>
         {isFavorite ? <BsHeartFill /> : <BsHeart />}
       </button>
