@@ -40,6 +40,7 @@ export default function CatCard({ cat, index }: CatCardProps) {
         width={300}
         height={400}
         className="w-full"
+        priority={index === 0}
       />
       <button onClick={() => toggleFavorite(cat)} className="mt-1 p-1 text-xl">
         {isFavorite ? (

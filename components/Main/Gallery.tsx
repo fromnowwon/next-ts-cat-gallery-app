@@ -1,30 +1,38 @@
 "use client";
 
 import { useCatStore } from "@/store/catStore";
-import { useEffect } from "react";
+import { useEffect, useMemo, useCallback } from "react";
 import { useInView } from "react-intersection-observer";
 import Masonry from "react-masonry-css";
 import CatCard from "../common/CatCard";
 import Loader from "../common/Loader";
 
 export default function Gallery() {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    rootMargin: "250px",
+  });
   const { cats, fetchCats, loadMoreCats, page, isLoading } = useCatStore();
 
-  useEffect(() => {
-    fetchCats(1);
-  }, [fetchCats]);
+  const memoizedCats = useMemo(() => cats, [cats]);
+  const memoizedFetchCats = useCallback(
+    (page: number) => fetchCats(page),
+    [fetchCats]
+  );
 
   useEffect(() => {
-    if (inView) loadMoreCats();
-  }, [inView, loadMoreCats]);
+    memoizedFetchCats(1);
+  }, [memoizedFetchCats]);
+
+  useEffect(() => {
+    if (inView && !isLoading) loadMoreCats();
+  }, [inView, isLoading, loadMoreCats]);
 
   useEffect(() => {
     console.log("page:", page);
     if (page > 1) {
-      fetchCats(page);
+      memoizedFetchCats(page);
     }
-  }, [page, fetchCats]);
+  }, [page, memoizedFetchCats]);
 
   return (
     <section className="container mx-auto py-6">
@@ -39,7 +47,7 @@ export default function Gallery() {
         className="flex gap-4"
         columnClassName="masonry-grid_column"
       >
-        {cats.map((cat, index: number) => (
+        {memoizedCats.map((cat, index: number) => (
           <CatCard key={`${cat.id}-${index}`} cat={cat} index={index} />
         ))}
       </Masonry>
