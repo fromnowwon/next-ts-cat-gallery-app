@@ -2,7 +2,7 @@
 
 이 프로젝트는 다양한 고양이 이미지를 무한 스크롤로 보여주는 Cat Gallery 웹 애플리케이션입니다. Next.js 14, TypeScript, Zustand, Tailwind CSS를 사용하여 개발되었습니다.
 
-- [DEMO](https://next-ts-cat-gallery-app.vercel.app/)
+- [DEMO](https://main.dbkz0t2bvijb9.amplifyapp.com/)
 
 ![DEMO PAGE](./public/sample1.png)
 
@@ -42,10 +42,10 @@ npm run dev
 
 ## 사용 기술
 
-- Next.js 14
-- TypeScript
-- Zustand
-- Tailwind CSS
+- **프론트엔드:** Next.js, TypeScript
+- **상태관리**: Zustand
+- **UI 프레임워크**: Tailwind CSS
+- **배포:** AWS Amplify
 
 ## 사용된 API
 
