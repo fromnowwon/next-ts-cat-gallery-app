@@ -2,7 +2,7 @@
 
 이 프로젝트는 다양한 고양이 이미지를 무한 스크롤로 보여주는 Cat Gallery 웹 애플리케이션입니다. Next.js 14, TypeScript, Zustand, Tailwind CSS를 사용하여 개발되었습니다.
 
-- [DEMO](https://main.dbkz0t2bvijb9.amplifyapp.com/)
+- [DEMO](https://main.de4cbd1a6bijp.amplifyapp.com/)
 
 ![DEMO PAGE](./public/sample1.png)
 
