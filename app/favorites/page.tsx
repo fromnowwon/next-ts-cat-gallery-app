@@ -16,7 +16,7 @@ export default function FavoritePage() {
   }
 
   return (
-    <section className="container mx-auto py-6">
+    <section className="container mx-auto py-6 px-2.5">
       <Masonry
         breakpointCols={{
           default: 4,

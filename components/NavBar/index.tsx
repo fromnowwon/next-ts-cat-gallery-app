@@ -18,7 +18,7 @@ const navMenuData = [
 export default function NavBar() {
   return (
     <nav className="flex flex-col w-full pt-4 bg-secondary">
-      <div className="flex justify-between items-center container mx-auto">
+      <div className="flex justify-between items-center container mx-auto px-2.5">
         <Link href="/">
           <h1 className="font-bold text-xl text-white">NEXT CAT GALLERY</h1>
         </Link>
@@ -26,7 +26,7 @@ export default function NavBar() {
       </div>
       <div className="w-full bg-white dark:bg-slate-200 border-b-[1px] border-b-secondary mt-4">
         <div className="flex justify-between items-center container mx-auto">
-          <div className="flex gap-4 py-2">
+          <div className="flex gap-4 py-2 px-2.5">
             {navMenuData.map((menu) => (
               <NavMenuItem
                 key={menu.id}
